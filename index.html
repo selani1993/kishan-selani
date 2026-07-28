@@ -14,7 +14,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
-  <script src="assets/js/script.js" defer></script>
+  <script>
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+    if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+    addEventListener("beforeunload", () => scrollTo(0, 0));
+  </script>
+  <script src="assets/js/script.js?v=3" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -33,8 +38,8 @@
       <div class="hero-grid container">
         <div class="hero-copy reveal">
           <p class="eyebrow"><span data-profile="role">IT Support Professional</span> · <span data-profile="location">Sydney, Australia</span></p>
-          <h1 id="hero-title">IT Support Ticket Portfolio</h1>
-          <p class="hero-lead">A collection of realistic IT support tickets demonstrating my troubleshooting approach, documentation, business awareness and problem-solving process.</p>
+          <h1 id="hero-title">How I Support Users</h1>
+          <p class="hero-lead">A practical view of my troubleshooting process, technical thinking and documentation style across common IT support requests.</p>
           <div class="hero-actions">
             <a class="button button-primary" href="#tickets">View support tickets <span aria-hidden="true">↓</span></a>
             <a class="button button-secondary" data-profile-href="resume" href="assets/Kishan_Selani_Resume.pdf" download>Download resume</a>
@@ -85,33 +90,43 @@
 
     <section class="section section-tinted" id="tickets" aria-labelledby="tickets-title">
       <div class="container">
-        <div class="section-heading reveal"><div><p class="section-label">Featured Support Tickets</p><h2 id="tickets-title">Five realistic support workflows.</h2></div><p>Each priority reflects user impact, workarounds, affected services and time sensitivity—not a fictional company SLA.</p></div>
+        <div class="section-heading reveal"><div><p class="section-label">Featured Support Tickets</p><h2 id="tickets-title">Common Support Requests I Handle</h2></div><p>Representative Level 1 support requests demonstrating how I investigate, troubleshoot and document issues.</p></div>
         <p class="section-note reveal">These are original, illustrative portfolio scenarios developed from common support issues and learning practice. Ticket IDs, priorities and resolution times are examples, not records from a real employer.</p>
-        <div class="ticket-list" id="ticket-list" aria-live="polite"></div>
+        <div class="ticket-list" id="ticket-list" aria-live="polite">
+          <p class="ticket-fallback" role="status">The support tickets could not load. Please enable JavaScript or refresh the page.</p>
+        </div>
       </div>
     </section>
 
     <section class="section" id="experience" aria-labelledby="experience-title">
       <div class="container">
-        <div class="section-heading reveal"><div><p class="section-label">Current Experience</p><h2 id="experience-title">IT Support Intern</h2></div><span class="badge progress">Current</span></div>
-        <article class="experience-card primary-experience reveal">
-          <div class="experience-top"><div><p class="meta">Active internship</p><h3>Structured end-user support practice</h3></div><p>I am building practical experience while working within appropriate supervision and escalation boundaries.</p></div>
-          <ul class="check-list">
-            <li>I support users with Windows and Microsoft 365 issues.</li>
-            <li>I troubleshoot account access, Outlook, printers, VPN and connectivity issues.</li>
-            <li>I assist with user onboarding and account-related tasks.</li>
-            <li>I document troubleshooting steps and resolutions.</li>
-            <li>I work through structured support workflows.</li>
-            <li>I communicate clearly with users during technical issues.</li>
-            <li>I escalate issues when required, including the evidence already gathered.</li>
-          </ul>
-        </article>
+        <div class="section-heading reveal"><div><p class="section-label">Experience</p><h2 id="experience-title">Current IT Support Experience</h2></div></div>
+        <div class="experience-grid">
+          <article class="experience-card primary-experience reveal">
+            <div class="experience-top"><div><p class="meta">June 2026 – Present</p><h3>IT Support Specialist (Internship)</h3><p>Australian Training &amp; Qualification College</p></div><span class="badge progress">Current</span></div>
+            <ul class="check-list">
+              <li>Provide Level 1 IT support for hardware, software and Microsoft 365 issues.</li>
+              <li>Support Outlook, Teams, OneDrive and classroom technology.</li>
+              <li>Troubleshoot desktops, laptops, printers and network connectivity.</li>
+              <li>Document issues, resolutions and maintain IT asset records.</li>
+            </ul>
+          </article>
+          <article class="experience-card reveal">
+            <div class="experience-top"><div><p class="meta">Jul 2025 – Sep 2025</p><h3>IT Support Specialist (Internship)</h3><p>Active IT</p></div></div>
+            <ul class="check-list">
+              <li>Resolved 20–25 Level 1 support tickets daily through the Kaseya ticketing system.</li>
+              <li>Administered Microsoft 365 mailboxes, licensing and permissions.</li>
+              <li>Managed VMware and Hyper-V virtual environments.</li>
+              <li>Verified backup and recovery processes.</li>
+            </ul>
+          </article>
+        </div>
       </div>
     </section>
 
     <section class="section section-tinted" id="skills" aria-labelledby="skills-title">
       <div class="container">
-        <div class="section-heading reveal"><div><p class="section-label">Skills</p><h2 id="skills-title">The areas I use to support users.</h2></div></div>
+        <div class="section-heading reveal"><div><p class="section-label">Skills</p><h2 id="skills-title">Tools &amp; Technologies</h2></div></div>
         <div class="card-grid skills-grid">
           <article class="card reveal"><span class="card-index">01</span><h3>Identity and Access</h3><p>Active Directory, Entra ID, password resets, account lockouts and user onboarding.</p></article>
           <article class="card reveal"><span class="card-index">02</span><h3>Microsoft 365</h3><p>Outlook, Teams, Exchange Online, SharePoint and Microsoft 365 administration learning.</p></article>

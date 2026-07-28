@@ -4,7 +4,7 @@ const profile = {
   location: "Sydney, Australia",
   email: "your.email@example.com",
   linkedin: "https://www.linkedin.com/in/your-profile/",
-  github: "https://github.com/yourusername",
+  github: "https://github.com/selani1993",
   resume: "assets/Kishan_Selani_Resume.pdf"
 };
 
@@ -197,6 +197,9 @@ const tickets = [
   });
 
   const ticketList = document.getElementById("ticket-list");
+  if (!ticketList) {
+    throw new Error("Support ticket container #ticket-list was not found.");
+  }
   ticketList.innerHTML = tickets.map((ticket, index) => `
     <article class="ticket-card reveal">
       <div class="ticket-summary">
