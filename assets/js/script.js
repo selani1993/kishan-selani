@@ -2,8 +2,8 @@ const profile = {
   name: "Kishan Selani",
   role: "IT Support Professional",
   location: "Sydney, Australia",
-  email: "your.email@example.com",
-  linkedin: "https://www.linkedin.com/in/your-profile/",
+  email: "selanikishan931@gmail.com",
+  linkedin: "https://www.linkedin.com/in/kishanselani",
   github: "https://github.com/selani1993",
   resume: "assets/Kishan_Selani_Resume.pdf"
 };
