@@ -2,6 +2,8 @@
 
 A single-page portfolio showing how Kishan prioritises realistic support issues by business impact, gathers evidence, adjusts his troubleshooting direction, documents resolutions and verifies outcomes.
 
+**Release:** Version 1.0
+
 ## Main features
 
 - Responsive, accessible single-page layout
