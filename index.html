@@ -13,13 +13,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=6">
+  <link rel="stylesheet" href="assets/css/style.css?v=7">
   <script>
     if ("scrollRestoration" in history) history.scrollRestoration = "manual";
     if (location.hash) history.replaceState(null, "", location.pathname + location.search);
     addEventListener("beforeunload", () => scrollTo(0, 0));
   </script>
-  <script src="assets/js/script.js?v=5" defer></script>
+  <script src="assets/js/script.js?v=6" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -62,14 +62,12 @@
     </section>
 
     <section class="section" id="about" aria-labelledby="about-title">
-      <div class="container two-col reveal">
-        <div class="about-intro">
-          <p class="section-label">About</p>
-          <h2 id="about-title">I turn broad user reports into testable problems.</h2>
-          <div class="about-photo">
-            <img src="assets/images/kishan-selani-headshot.jpg" alt="Portrait of Kishan Selani" width="640" height="640" loading="lazy" decoding="async">
-          </div>
+      <div class="container about-layout reveal">
+        <div class="about-photo">
+          <img src="assets/images/kishan-selani-headshot.jpg" alt="Portrait of Kishan Selani" width="640" height="640" loading="lazy" decoding="async">
         </div>
+        <p class="section-label">About</p>
+        <h2 id="about-title">I turn broad user reports into testable problems.</h2>
         <div class="body-copy">
           <p>Hi, I’m Kishan, an IT support professional based in Sydney. I enjoy helping users resolve technical issues, understanding the root cause of problems and documenting clear, reliable solutions.</p>
           <p>This portfolio demonstrates how I approach support tickets from the initial user report through to resolution and verification. The scenarios are illustrative and based on realistic support practice and learning environments; they are not exports from an employer’s ticketing platform.</p>

@@ -179,6 +179,41 @@ const tickets = [
       "What Changed My Thinking?": "The missing mailbox detail showed why I should not copy access automatically. I stopped and sought approval before proceeding.",
       "If I Saw This Ticket Again Tomorrow...": "I would begin with the role checklist and compare requirements with a similar role, while still requiring explicit approval for every access change."
     }
+  },
+  {
+    id: "INC-000106",
+    title: "Office-Wide Internet Outage",
+    priority: "P1 – Critical",
+    impact: "All office users lose internet access. Email, cloud applications, web-based systems, remote services and normal business communication are disrupted, preventing staff from continuing normal work.",
+    attention: "Multiple departments cannot access essential business services, there is no practical user-level workaround, and immediate triage, escalation and communication are required.",
+    users: "Entire office / multiple departments",
+    category: "Network and Connectivity",
+    environment: "Windows 11, Command Prompt, network status, gateway checks, outage information and escalation process",
+    status: "Resolved",
+    timeLabel: "Illustrative restoration time",
+    time: "1 hour 12 minutes",
+    workflow: {
+      "Ticket Overview": "Multiple users from different areas reported that websites, email and cloud applications were unavailable. I treated the reports as a potential major incident and began by establishing scope.",
+      "User Report": "Users in separate departments reported that internet-based services had stopped working at approximately the same time.",
+      "Business Impact": "The outage affected the whole office and interrupted email, cloud applications, web-based systems, remote services and normal business communication. Staff could not continue normal work.",
+      "Priority Assessment": "I classified this illustrative scenario as P1 – Critical because multiple departments were affected, essential services were unavailable, no practical workaround existed and normal business operations were immediately interrupted.",
+      "Initial Assessment": "I first determined whether the problem affected one device, one network segment, Wi-Fi only or the entire office before performing detailed endpoint troubleshooting.",
+      "Questions I Asked": "I asked whether wired and wireless users were both affected, whether any internal resources remained available, whether the issue began at the same time, whether all floors or departments were affected, whether remote users were affected and whether planned network changes had been announced.",
+      "Information Gathered": "Reports from several devices across multiple departments showed the same loss of external services. Both wired and wireless users were affected, and the timing was consistent across the office.",
+      "Possible Causes": "I considered an ISP outage, a gateway or upstream connectivity issue, DNS failure, a network equipment outage, a power issue affecting network equipment, and planned or unplanned maintenance.",
+      "Troubleshooting Process": "I confirmed network adapter connectivity, checked that affected devices had valid IP configuration, tested the default gateway, tested an external IP address, tested DNS resolution and compared results across multiple users. I checked available internal outage information and escalated promptly once the broad scope was confirmed.",
+      "Tools Used": "Windows network status, ipconfig /all, ping, nslookup, observable router or gateway indicators, available internal outage information, and ticketing and communication tools.",
+      "Findings": "Multiple devices had valid local IP addresses and the local gateway responded, but external connectivity failed across different endpoints. The issue was not isolated to one user or device, and the evidence indicated an upstream or provider-level disruption requiring escalation.",
+      "Root Cause": "An upstream service disruption prevented the office network from reaching external internet services. The underlying provider-side issue required resolution by the ISP or network team.",
+      "Resolution": "I logged and updated the major incident, escalated it with the scope and supporting test results, communicated updates to users, monitored progress and retested connectivity after the provider or network team restored service.",
+      "Verification": "I confirmed that external IP connectivity and DNS resolution were restored, websites and cloud services were accessible, and representative users from multiple departments could work normally again.",
+      "User Confirmation": "Representative users from different departments confirmed that internet access, email and cloud services were available again.",
+      "Preventive Action": "I recommended maintaining clear outage communication templates and current ISP and escalation contacts, documenting quick checks that distinguish endpoint issues from broad outages, and asking the responsible infrastructure team to review redundancy or failover options.",
+      "Documentation": "I recorded the timeline, affected scope, test results, escalation details, user communications and confirmation of service restoration.",
+      "Key Learning": "Recognising the scope quickly prevents wasted endpoint troubleshooting and enables faster escalation and clearer communication.",
+      "What Changed My Thinking?": "Reports from separate users and departments changed my working assumption from an individual connectivity problem to a major incident.",
+      "If I Saw This Ticket Again Tomorrow...": "I would first establish scope, verify basic local connectivity, compare results across users, communicate the impact and escalate with concise evidence."
+    }
   }
 ];
 
@@ -202,7 +237,7 @@ const tickets = [
     throw new Error("Support ticket container #ticket-list was not found.");
   }
   ticketList.innerHTML = tickets.map((ticket, index) => `
-    <article class="ticket-card reveal">
+    <article class="ticket-card${ticket.priority.startsWith("P1") ? " ticket-card-critical" : ""} reveal">
       <div class="ticket-summary">
         <div class="ticket-heading">
           <p class="ticket-id">${escapeHtml(ticket.id)} · Illustrative ticket</p>
