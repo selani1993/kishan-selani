@@ -237,10 +237,10 @@ const tickets = [
     throw new Error("Support ticket container #ticket-list was not found.");
   }
   ticketList.innerHTML = tickets.map((ticket, index) => `
-    <article class="ticket-card${ticket.priority.startsWith("P1") ? " ticket-card-critical" : ""} reveal">
+    <article class="ticket-card reveal">
       <div class="ticket-summary">
         <div class="ticket-heading">
-          <p class="ticket-id">${escapeHtml(ticket.id)} · Illustrative ticket</p>
+          <p class="ticket-id">${escapeHtml(ticket.id)}</p>
           <h3>${escapeHtml(ticket.title)}</h3>
           <ul class="tags"><li>${escapeHtml(ticket.category)}</li><li>${escapeHtml(ticket.environment)}</li></ul>
         </div>
